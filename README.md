@@ -261,37 +261,57 @@ L'application web est en ligne à l'adresse : [https://smartlearn.experts-meca.c
 
 L'application peut être lancée avec Docker en suivant les étapes suivantes :
 
-### 1. Arrêter les conteneurs existants
+### 1. Cloner le projet
+
+```bash
+git clone <url-du-repo>
+cd <nom-du-repo>
+```
+  
+### 2. Créer le fichier .env
+
+Copiez le fichier d’exemple :
+
+```bash
+cp docker-compose/html/smartlearn/.env.example docker-compose/html/smartlearn/.env 
+```
+Sous Windows (PowerShell) :
+```bash
+copy docker-compose/html/smartlearn/.env.example docker-compose/html/smartlearn/.env
+```
+
+### 3. Arrêter les conteneurs existants (optionnel)
 
 ```bash
 docker compose down
 ```
   
-### 2. Nettoyer les volumes (optionnel)
+### 4. Nettoyer les volumes (optionnel)
 ```bash
 docker volume prune -f  
 ```
   
-### 3. Démarrer les conteneurs
+### 5. Démarrer les conteneurs
 ```bash
 docker compose up -d
 ```
-ou avec le script du cours
+ou avec le script
 ```bash
  ./run.sh
 ```
 
-### 4. Importer la base de données 
-Ouvrez un deuxième gitbash, placez-vous où se trouve le fichier `smartLearn.sql`, puis exécutez :
+### 6. Importer la base de données 
+Ouvrez un second terminal, placez-vous dans le dossier contenant smartLearn.sql, puis exécutez :
 ```bash
 docker exec -i aw_db mysql -u root -pdanger --default-character-set=utf8mb4 < smartLearn.sql  
 ```
 
-### Accès à l'application
+### 7. Accès à l'application
 
 Une fois lancée, l'application est accessible à l'adresse :
 
 http://localhost:8080
+
 
 ## 13. 📈 **Evolutions envisageables :**  
   
