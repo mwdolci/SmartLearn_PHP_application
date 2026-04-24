@@ -1,6 +1,6 @@
-# 📘 Projet : Plateforme d'inscription à des cours (SmartLearn)
+# SmartLearn: plateforme d'inscription à des cours
 
-## 👥 Groupe
+## 👥 Auteurs
 
 - **Marco Dolci**  
 - **Christophe Debons**
@@ -52,21 +52,15 @@ L’application repose sur :
 - Rôles : enseignant / étudiant  
 - Page profil  
 
-![login](public/img/login.png)
-
 ### 3.2 Gestion des cours
 
 - Enseignant : créer, ses cours  
 - Étudiant : consulter les cours disponibles
 
-![création cours](public/img/creat_course.png)
-
 ### 3.3 Inscriptions aux cours
 
 - Étudiant : s’inscrire
 - Enseignant : voir les étudiants inscrits à ses cours  
-
-![liste cours](public/img/list_cours.png)
 
 ### 3.4 Suivi avancement (pastilles)
 
@@ -77,8 +71,6 @@ Chaque inscription possède un état d’avancement :
 - Paiement  
 - Réalisation  
 - Certification  
-
-![suivi étudiants](public/img/suivi_etudiants.png)
 
 Une table dédiée a été ajoutée pour gérer ces statuts (`enrollmentstatus`).  
 Les pastilles sont mises à jour via AJAX (JS) par l'enseignant.
@@ -98,7 +90,7 @@ Les pastilles sont mises à jour via AJAX (JS) par l'enseignant.
 
 Ce schéma représente les relations entre les utilisateurs, les cours, les inscriptions et les statuts d’inscription.
 
-![Schéma EA](public/img/schema_ea.png)
+![Schéma EA](docker-compose/html/smartlearn/public/img/schema_ea.png)
 
 ---
 
@@ -106,11 +98,11 @@ Ce schéma représente les relations entre les utilisateurs, les cours, les insc
 
 Voici la structure relationnelle utilisée dans la base de données SQL.
 
-![Schéma relationnel](public/img/schema_relationnel.png)
+![Schéma relationnel](docker-compose/html/smartlearn/public/img/schema_relationnel.png)
 
 ---
 
-### Tables principales
+### Tables
 
 #### `users`
 
@@ -155,7 +147,7 @@ Voici la structure relationnelle utilisée dans la base de données SQL.
 
 ---
 
-## 5. 🌐 Routes principales
+## 5. 🌐 Routes
 
 | URL               | Méthode  | Contrôleur            | Action          | Description action                               | Rôle               |
 |-------------------|----------|-----------------------|-----------------|--------------------------------------------------|--------------------|
@@ -259,17 +251,13 @@ Pour faciliter les tests, plusieurs comptes sont déjà présents dans la base :
 | mh@gmail.ch     | teacher   |
 | sm@gmail.ch     | teacher   |
 
-🔐 **Mot de passe unique pour tous les comptes :** `1234`
+🔐 **Mot de passe unique pour tous les comptes :** `1234` 
 
-## 11. 🟦 **Logo du projet :**
-
-![SmartLearn Logo](public/img/smartLearn.WebP)  
-
-## 12. 🌐 **Consulter l'application en ligne :**  
+## 11. 🌐 **Consulter l'application en ligne :**  
   
 L'application web est en ligne à l'adresse : [https://smartlearn.experts-meca.ch](https://smartlearn.experts-meca.ch)
 
-## 13. 🖥️ **Lancement de l'application avec Docker :**
+## 12. 🖥️ **Lancement de l'application avec Docker :**
 
 L'application peut être lancée avec Docker en suivant les étapes suivantes :
 
@@ -305,12 +293,7 @@ Une fois lancée, l'application est accessible à l'adresse :
 
 http://localhost:8080
 
-## 14. ℹ️ **Informations complémentaires :**  
-  
-⚠️ En production, le fichier .env serait impérativement exclu du dépôt (.gitignore) afin de protéger les informations sensibles.
-
-
-## 15. 📈 **Evolutions envisageables :**  
+## 13. 📈 **Evolutions envisageables :**  
   
 - Forcer un mot de passe fort (nombre de caractères minimal, caractère spécial, un chiffre, une majuscule, ...)
 - Contrôle si adresse e-mail valide (validation par validation e-mail) 
