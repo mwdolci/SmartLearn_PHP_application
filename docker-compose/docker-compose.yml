@@ -1,0 +1,39 @@
+services:
+   web:
+      container_name: aw_php-apache2
+      build:
+         context: php
+      depends_on:
+         - db
+      environment:
+         MYSQL_USER: user
+         MYSQL_PASSWORD: danger2         
+      volumes: # ./ required (else volume name implied)
+         - ./html:/var/www/html/
+         - ./php/config/php.ini:/usr/local/etc/php/php.ini:ro
+      ports:
+         - 8080:80
+   db:
+      container_name: aw_db
+      image: mysql
+      restart: always
+      environment:
+         MYSQL_ROOT_PASSWORD: danger
+         MYSQL_DATABASE: db
+         MYSQL_USER: user
+         MYSQL_PASSWORD: danger2
+      ports:
+         -  9906:3306   # entre les 2 conteneurs: 3306
+   adminer:
+      container_name: aw_adminer
+      image: adminer
+      restart: always
+      depends_on:
+         - db
+      ports:
+         - 8088:8080
+      environment:
+         MYSQL_ROOT_PASSWORD: danger
+         MYSQL_DATABASE: db
+         MYSQL_USER: user
+         MYSQL_PASSWORD: danger2

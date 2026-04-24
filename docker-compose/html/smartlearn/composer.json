@@ -1,0 +1,11 @@
+{
+    "name": "root/smartlearn",
+    "authors": [
+        {
+            "name": "dolci"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^13.1"
+    }
+}

@@ -1,0 +1,1 @@
+<p class="error-message"><?= $message ?? 'Une erreur est survenue.' ?></p>

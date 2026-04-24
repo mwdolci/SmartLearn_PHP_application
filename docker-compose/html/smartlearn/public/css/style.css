@@ -1,0 +1,699 @@
+/* --- Mode Dark --- */
+:root {
+
+    /* ------------------------------------------------------------
+       PALETTE PRINCIPALE
+    ------------------------------------------------------------ */
+    --accent: #00c2ff;
+    --accent-light: #4ddcff;
+    --accent-dark: #008bb8;
+
+    /* ------------------------------------------------------------
+       FOND & TEXTE
+    ------------------------------------------------------------ */
+    --color-bg: #0f0f11;
+    --color-bg-alt: #16161a;
+
+    --color-text: #e6e6e6;
+    --color-text-muted: #a8a8a8;
+
+    /* ------------------------------------------------------------
+       COULEURS D'ÉTAT (erreur, succès, avertissement)
+    ------------------------------------------------------------ */
+    --red: #ff4d4d;
+    --red-light: #ff8080;
+    --red-bg: rgba(255, 0, 0, 0.15);
+
+    --green: #4dff4d;
+    --green-light: #80ff80;
+    --green-bg: rgba(0, 255, 0, 0.15);
+
+    --yellow: #ffd966;
+    --yellow-light: #ffecb3;
+
+    /* ------------------------------------------------------------
+       COULEURS NEUTRES / STRUCTURE
+    ------------------------------------------------------------ */
+    --gray: #2a2a2e;
+    --gray-light: #3a3a40;
+    --gray-bg: #1a1a1d;
+
+    --separator: #ccc;
+    --pastille-border: #555;
+
+    /* ------------------------------------------------------------
+       CARTES / BLOCS
+    ------------------------------------------------------------ */
+    --card-bg: var(--gray-bg);
+    --card-border: var(--gray);
+    --radius-border: 6px;
+
+    /* ------------------------------------------------------------
+       FORMULAIRES
+    ------------------------------------------------------------ */
+    --form-bg: #1b1b1e;
+    --form-border: #2c2c31;
+
+    --input-bg: #242428;
+    --input-border: #3a3a40;
+    --input-text: #ffffff;
+
+    /* ------------------------------------------------------------
+       BOUTONS
+    ------------------------------------------------------------ */
+    --btn-bg: var(--accent);
+    --btn-text: #000;
+    --btn-bg-hover: var(--accent-light);
+    --btn-bg-active: var(--accent-dark);
+
+    --disabled-bg: #ccc;
+
+    /* ------------------------------------------------------------
+       TITRES / TYPOGRAPHIE
+    ------------------------------------------------------------ */
+    --title-color: #e0e0e0;
+    --meta-color: #e0e0e0;
+
+    --gradient-end: #7d4dff;
+
+    /* ------------------------------------------------------------
+       TABLEAUX / LIGNES / SUIVI
+    ------------------------------------------------------------ */
+    --suivi-user-color: var(--accent);
+    --row-bg: #1a1a1a;
+    --row-border: #2c2c2c;
+}
+
+
+/* --- Global --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, var(--accent), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+/* --- Header & footer --- */
+header h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+}
+
+.logo-smartlearn {
+    width: 820px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.menu-right {
+    display: flex;
+    justify-content: flex-end; /* bouton à droite */
+    width: auto;
+}
+
+/* Style du bouton About */
+.btn-about {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-top: 15px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border-radius: var(--radius-border);
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-about:hover {
+    background-color: var(--btn-bg-hover);
+}
+
+.btn-about:active {
+    background-color: var(--btn-bg-active);
+}
+
+/* -------------------------- login ------------------------------ */
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.form-spacing {
+    margin-bottom: 40px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 10px 20px;
+    width: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--form-border);
+    border-radius: var(--radius-border);
+    background: var(--form-bg);
+}
+
+.form-grid input[type="text"],
+.form-grid input[type="password"],
+.form-grid input[type="email"],
+.form-grid input[type="date"],
+.form-grid input[type="time"],
+.form-grid input[type="number"],
+.form-grid textarea,
+.form-grid select {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--input-text);
+    padding: 8px;
+    border-radius: var(--radius-border);
+    resize: none;
+}
+
+.prix-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prix-wrapper input {
+    flex: 1;
+}
+
+.prix-unit {
+    color: var(--input-text);
+}
+
+.submit-btn {
+    display: inline-block;
+    grid-column: 1 / span 2;
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: var(--radius-border);
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.submit-btn:hover {
+    background: var(--btn-bg-hover);
+}
+
+.submit-btn.disabled {
+    background-color: var(--disabled-bg);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* -------------------------- user ------------------------------ */
+
+.info-form {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+
+/* -------------------------- layout ------------------------------ */
+
+.box {
+    display: flex;
+}
+
+.border {
+    border-color: var(--btn-bg);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.sidebar {
+    width: 15%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 18px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    text-decoration: none;
+    border-radius: var(--radius-border);
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar a:hover {
+    background-color: var(--btn-bg-hover);
+}
+
+.sidebar a.active {
+    background-color: var(--btn-bg-active);
+    color: var(--color-text);
+}
+
+.content {
+    width: 85%;
+}
+
+.header-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+.user-name {
+    margin: 0;
+    text-align: right;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--btn-bg);
+    border-radius: var(--radius-border);
+}
+
+.btn-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-icon:hover {
+    background-color: var(--btn-bg-active);
+}
+
+.about-content {
+    text-align: left;
+    max-width: 1400px;
+}
+
+/* -------------------------- list ------------------------------ */
+
+.course-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.suivi-colum {
+    background: var(--card-bg);
+    border-radius: 6px;
+    border: 1px solid var(--form-border);
+}
+
+/* Liste des cours */
+.course-list {
+    width: 250px;
+    flex-shrink: 0;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius-border);
+    border: 1px solid var(--card-border);
+}
+
+.course-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-list li {
+    margin-bottom: 12px;
+}
+
+.course-list a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.course-list a:hover {
+    text-decoration: underline;
+}
+
+/* Bloc descriptif */
+.course-details {
+    flex: 1;
+    min-width: 0;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius-border);
+    border: 1px solid var(--card-border);
+}
+
+.course-details h3 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.course-description {
+    margin-bottom: 25px;
+    line-height: 1.5;
+    color: var(--color-text);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Informations du cours */
+.course-info {
+    display: flex;
+    gap: 200px;
+}
+
+.info-col p {
+    margin: 8px 0;
+    color: var(--color-text);
+}
+
+.info-col strong {
+    color: var(--accent);
+}
+
+/* Conteneur de chaque ligne */
+.course-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* On cache le vrai input radio */
+.course-item input[type="radio"] {
+    display: none;
+}
+
+/* Le petit carré */
+.course-item .square {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--accent);
+    border-radius: 3px;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+/* Quand sélectionné → carré rempli */
+.course-item input[type="radio"]:checked + .square {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.form-grid fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+/* -------------------------- cours ------------------------------ */
+
+.suivi-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+}
+
+.suivi-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: var(--row-bg);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--row-border);
+}
+
+.suivi-user {
+    width: 150px;
+    font-weight: bold;
+    color: var(--suivi-user-color);
+    margin: 20px 0px 0px 20px;
+}
+
+.suivi-course {
+    flex: 1;
+    margin: 20px 0px 20px 20px;
+}
+
+.course-title,
+.course-meta {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--title-color);
+}
+
+.course-title { font-size: 18px; }
+.course-meta  { font-size: 16px; }
+
+
+.pastilles {
+    display: flex;
+    gap: 15px;
+}
+
+.pastille {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--pastille-border);
+    transition: 0.2s;
+    pointer-events: auto;
+}
+
+
+.pastille.clickable {
+    cursor: pointer;
+}
+
+.student-separator {
+    border: none;
+    border-top: 2px solid var(--separator);
+    margin: 20px 0;
+}
+
+
+/* États */
+.pastille[data-state="white"] { background: #ffffff; }
+.pastille[data-state="green"] { background: #00ff00; }
+.pastille[data-state="red"]   { background: #ff0000; }
+
+/* -------------------------- alerts ------------------------------ */
+
+.alert {
+    grid-column: 1 / span 2;
+    padding: 12px 16px;
+    border-radius: var(--radius-border);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+/* Erreur */
+.alert-error {
+    background-color: var(--red-bg);
+    border-color: var(--red);
+    color: var(--red-light);
+}
+
+/* Succès */
+.alert-success {
+    background-color: var(--green-bg);
+    border-color: var(--green);
+    color: var(--green-light);
+}
+
+.error-message {
+    color: var(--red-light);
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* -------------------------- responsive ------------------------------ */
+
+@media (max-width: 900px) {
+
+    .box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-smartlearn {
+        width: 220px;
+        height: auto;
+    }
+
+    .sidebar {
+        width: auto;
+        padding: 15px;
+    }
+
+    .content {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .course-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .course-list,
+    .course-details {
+        width: auto;
+        padding: 15px;
+    }
+
+    .course-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .course-info p {
+        white-space: nowrap;
+    }
+
+    .header-user {
+        justify-content: space-between;
+        padding-right: 10px;
+    }
+
+    .user-name {
+        font-size: 0.9em;
+        word-wrap: break-word;
+    }
+
+    .textRight{
+        margin-left: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        width: auto;
+        max-width: none;
+    }
+
+    .form-grid label {
+        margin-top: 10px;
+    }
+
+    /* Header tablette */
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .menu-right {
+        width: 100%;
+        justify-content: center; /* centré en tablette */
+        margin-bottom: 15px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .form-grid input,
+    .form-grid textarea,
+    .form-grid select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-grid fieldset label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form-grid fieldset input[type="checkbox"] {
+        width: auto;
+        margin: 0;
+        flex-shrink: 0;
+    }
+}
+
+/* -------------------------- mobile très petit ------------------------------ */
+@media (max-width: 600px) {
+
+   header {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .menu-right {
+        width: 100%;
+        justify-content: center; /* centré en mobile */
+        margin-bottom: 15px;
+    }
+
+    .btn-about {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+}
